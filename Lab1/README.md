@@ -7,10 +7,10 @@ Software Engineering
 
 | Name | SRN |
 |---|---|
-| Team Member 1 | PES1UG24AM075 |
-| Team Member 2 | PES1UG24AM076 |
-| Team Member 3 | PES1UG24AM101 |
-| Team Member 4 | PES1UG24AM804 |
+| Dandu Nivas Reddy | PES1UG24AM075 |
+| Darisi Anantha Venkata Sreeram | PES1UG24AM076 |
+| Gajula Sai Hemanth | PES1UG24AM101 |
+| J Karthik | PES1UG25AM804 |
 
 ## Project Context
 
