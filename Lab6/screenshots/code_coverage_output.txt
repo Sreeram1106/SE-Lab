@@ -1,0 +1,33 @@
+PS D:\SE-Lab\Lab6> coverage run -m pytest CodeCoverageTest_library_fines.py; coverage report -m
+================================================= test session starts =================================================
+platform win32 -- Python 3.11.9, pytest-9.2.0, pluggy-1.7.0
+rootdir: D:\SE-Lab\Lab6
+plugins: platformdirs-4.14.5
+collected 11 items
+
+CodeCoverageTest_library_fines.py ...........                                                                    [100%]
+
+================================================= 11 passed in 0.08s ==================================================
+Name                                Stmts   Miss  Cover   Missing
+-----------------------------------------------------------------
+CodeCoverageTest_library_fines.py      26      0   100%
+library_fines.py                       32      0   100%
+-----------------------------------------------------------------
+TOTAL                                  58      0   100%
+PS D:\SE-Lab\Lab6> coverage run --branch -m pytest CodeCoverageTest_library_fines.py; coverage report -m
+================================================= test session starts =================================================
+platform win32 -- Python 3.11.9, pytest-9.2.0, pluggy-1.7.0
+rootdir: D:\SE-Lab\Lab6
+plugins: platformdirs-4.14.5
+collected 11 items
+
+CodeCoverageTest_library_fines.py ...........                                                                    [100%]
+
+================================================= 11 passed in 0.06s ==================================================
+Name                                Stmts   Miss Branch BrPart  Cover   Missing
+-------------------------------------------------------------------------------
+CodeCoverageTest_library_fines.py      26      0      0      0   100%
+library_fines.py                       32      0     22      1    98%   17->19
+-------------------------------------------------------------------------------
+TOTAL                                  58      0     22      1    99%
+PS D:\SE-Lab\Lab6>
