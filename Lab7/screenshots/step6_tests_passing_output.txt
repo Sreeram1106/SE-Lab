@@ -1,0 +1,11 @@
+PS D:\SE-Lab\Lab7> pytest test_library_fines.py
+================================================= test session starts =================================================
+platform win32 -- Python 3.11.9, pytest-9.2.0, pluggy-1.7.0
+rootdir: D:\SE-Lab\Lab7
+plugins: hypothesis-6.170.15, platformdirs-4.14.5
+collected 7 items
+
+test_library_fines.py .......                                                                                    [100%]
+
+================================================== 7 passed in 1.65s ==================================================
+PS D:\SE-Lab\Lab7>
