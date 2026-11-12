@@ -1,3 +1,31 @@
+# Lab 5 — Static Code Analysis (Submission)
+
+- **SRN:** PES1UG24AM076
+- **Name:** Darisi Anantha Venkata Sreeram
+- **Assigned repo:** [L5_14_recruitment_tracker](https://github.com/SETAPESU26/L5_14_recruitment_tracker)
+
+| Tool | Before | After |
+|------|--------|-------|
+| Pylint | 4.47/10 | 10.00/10 |
+| Bandit | 3 issues (2 Medium, 1 Low) | No issues |
+| Flake8 | 8 warnings | 0 warnings |
+
+## Files
+
+- `recruitment_tracker.py` — cleaned version of the program.
+- `issues.md` — table of the issues found and how each was fixed.
+- `reflection.md` — answers to the reflection questions.
+- `reports/before/` — `pylint_report.txt`, `bandit_report.txt`, `flake8_report.txt` for the original script.
+- `reports/after/` — the same three reports after the fixes (the Flake8 report is empty because no issues remain).
+
+## Fix commits
+
+1. **Lab 5: Fix Bandit security issues** — SQL injection, `eval()`, `try/except/pass`.
+2. **Lab 5: Fix Pylint issues (score 4.47 -> 10.00)** — naming, docstrings, return values, file handling.
+3. **Lab 5: Fix Flake8 style issues** — line length and blank lines.
+
+---
+
 # Lab 5: Static Code Analysis — Applicant Tracking System
 
 **Your file:** `recruitment_tracker.py`
