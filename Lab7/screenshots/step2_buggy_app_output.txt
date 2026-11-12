@@ -1,0 +1,26 @@
+PS D:\SE-Lab\Lab7> Get-Content inputs\valid.txt; cmd /c "python library_fines.py < inputs\valid.txt"; Get-Content inputs\invalid.txt; cmd /c "python library_fines.py < inputs\invalid.txt"
+STU-1023
+10,20,30
+Data Structures
+==== Running parse_member_id ====
+Enter a member ID (e.g. STU-1023): Member Type and Number: ('STU', 1023)
+
+==== Running total_fine ====
+Enter days kept for each book as CSV (e.g. 10,20,30): Total Fine: 44
+
+==== Running shelf_code ====
+Enter a book title with at least two words: Shelf Code: DS
+STU1023
+10,,30
+Python
+==== Running parse_member_id ====
+Enter a member ID (e.g. STU-1023): Traceback (most recent call last):
+  File "D:\SE-Lab\Lab7\library_fines.py", line 34, in <module>
+    main()
+  File "D:\SE-Lab\Lab7\library_fines.py", line 20, in main
+    result = parse_member_id(user_input)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\SE-Lab\Lab7\library_fines.py", line 2, in parse_member_id
+    member_type, number = member_id.split('-')
+    ^^^^^^^^^^^^^^^^^^^
+ValueError: not enough values to unpack (expected 2, got 1)

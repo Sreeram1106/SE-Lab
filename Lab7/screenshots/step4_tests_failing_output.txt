@@ -1,0 +1,205 @@
+PS D:\SE-Lab\Lab7> pytest test_library_fines.py
+================================================= test session starts =================================================
+platform win32 -- Python 3.11.9, pytest-9.2.0, pluggy-1.7.0
+rootdir: D:\SE-Lab\Lab7
+plugins: hypothesis-6.170.15, platformdirs-4.14.5
+collected 7 items
+
+test_library_fines.py FFF..F.                                                                                    [100%]
+
+====================================================== FAILURES =======================================================
+____________________________________________ test_parse_member_id_no_crash ____________________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 8, in test_parse_member_id_no_crash
+  |     def test_parse_member_id_no_crash(s):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 10, in test_parse_member_id_no_crash
+    |     parse_member_id(s)
+    |   File "D:\SE-Lab\Lab7\library_fines.py", line 3, in parse_member_id
+    |     return member_type.upper(), int(number)
+    |                                 ^^^^^^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    |
+    | During handling of the above exception, another exception occurred:
+    |
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 12, in test_parse_member_id_no_crash
+    |     assert False, f"parse_member_id crashed with: {e!r}"
+    | AssertionError: parse_member_id crashed with: ValueError("invalid literal for int() with base 10: ''")
+    | assert False
+    | Failing test case: test_parse_member_id_no_crash(
+    |     s='-',
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 10, in test_parse_member_id_no_crash
+    |     parse_member_id(s)
+    |   File "D:\SE-Lab\Lab7\library_fines.py", line 2, in parse_member_id
+    |     member_type, number = member_id.split('-')
+    |     ^^^^^^^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 2, got 1)
+    |
+    | During handling of the above exception, another exception occurred:
+    |
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 12, in test_parse_member_id_no_crash
+    |     assert False, f"parse_member_id crashed with: {e!r}"
+    | AssertionError: parse_member_id crashed with: ValueError('not enough values to unpack (expected 2, got 1)')
+    | assert False
+    | Failing test case: test_parse_member_id_no_crash(
+    |     s='',  # or any other generated value
+    | )
+    +---------------- 3 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 10, in test_parse_member_id_no_crash
+    |     parse_member_id(s)
+    |   File "D:\SE-Lab\Lab7\library_fines.py", line 2, in parse_member_id
+    |     member_type, number = member_id.split('-')
+    |                           ^^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    |
+    | During handling of the above exception, another exception occurred:
+    |
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 12, in test_parse_member_id_no_crash
+    |     assert False, f"parse_member_id crashed with: {e!r}"
+    | AssertionError: parse_member_id crashed with: AttributeError("'NoneType' object has no attribute 'split'")
+    | assert False
+    | Failing test case: test_parse_member_id_no_crash(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+______________________________________________ test_total_fine_no_crash _______________________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 16, in test_total_fine_no_crash
+  |     def test_total_fine_no_crash(s):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 18, in test_total_fine_no_crash
+    |     total_fine(s)
+    |   File "D:\SE-Lab\Lab7\library_fines.py", line 6, in total_fine
+    |     days = [int(d) for d in days_csv.split(',')]
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "D:\SE-Lab\Lab7\library_fines.py", line 6, in <listcomp>
+    |     days = [int(d) for d in days_csv.split(',')]
+    |             ^^^^^^
+    | ValueError: invalid literal for int() with base 10: ''
+    |
+    | During handling of the above exception, another exception occurred:
+    |
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 20, in test_total_fine_no_crash
+    |     assert False, f"total_fine crashed with: {e!r}"
+    | AssertionError: total_fine crashed with: ValueError("invalid literal for int() with base 10: ''")
+    | assert False
+    | Failing test case: test_total_fine_no_crash(
+    |     s='',  # or any other generated value
+    | )
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 18, in test_total_fine_no_crash
+    |     total_fine(s)
+    |   File "D:\SE-Lab\Lab7\library_fines.py", line 6, in total_fine
+    |     days = [int(d) for d in days_csv.split(',')]
+    |                             ^^^^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    |
+    | During handling of the above exception, another exception occurred:
+    |
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 20, in test_total_fine_no_crash
+    |     assert False, f"total_fine crashed with: {e!r}"
+    | AssertionError: total_fine crashed with: AttributeError("'NoneType' object has no attribute 'split'")
+    | assert False
+    | Failing test case: test_total_fine_no_crash(
+    |     s=None,  # or any other generated value
+    | )
+    +------------------------------------
+______________________________________________ test_shelf_code_no_crash _______________________________________________
+  + Exception Group Traceback (most recent call last):
+  |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 24, in test_shelf_code_no_crash
+  |     def test_shelf_code_no_crash(s):
+  |                    ^^^
+  | ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 26, in test_shelf_code_no_crash
+    |     shelf_code(s)
+    |   File "D:\SE-Lab\Lab7\library_fines.py", line 15, in shelf_code
+    |     return (words[0][0] + words[1][0]).upper()
+    |             ~~~~~^^^
+    | IndexError: list index out of range
+    |
+    | During handling of the above exception, another exception occurred:
+    |
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 28, in test_shelf_code_no_crash
+    |     assert False, f"shelf_code crashed with: {e!r}"
+    | AssertionError: shelf_code crashed with: IndexError('list index out of range')
+    | assert False
+    | Failing test case: test_shelf_code_no_crash(
+    |     s='',
+    | )
+    | Explanation:
+    |     These lines were always and only run by failing test cases:
+    |         D:\SE-Lab\Lab7\test_library_fines.py:27
+    +---------------- 2 ----------------
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 26, in test_shelf_code_no_crash
+    |     shelf_code(s)
+    |   File "D:\SE-Lab\Lab7\library_fines.py", line 14, in shelf_code
+    |     words = title.split()
+    |             ^^^^^^^^^^^
+    | AttributeError: 'NoneType' object has no attribute 'split'
+    |
+    | During handling of the above exception, another exception occurred:
+    |
+    | Traceback (most recent call last):
+    |   File "D:\SE-Lab\Lab7\test_library_fines.py", line 28, in test_shelf_code_no_crash
+    |     assert False, f"shelf_code crashed with: {e!r}"
+    | AssertionError: shelf_code crashed with: AttributeError("'NoneType' object has no attribute 'split'")
+    | assert False
+    | Failing test case: test_shelf_code_no_crash(
+    |     s=None,
+    | )
+    | Explanation:
+    |     These lines were always and only run by failing test cases:
+    |         D:\SE-Lab\Lab7\test_library_fines.py:27
+    +------------------------------------
+________________________________________ test_total_fine_rejects_negative_days ________________________________________
+
+    @given(st.lists(st.integers(min_value=0, max_value=365)),
+>          st.integers(min_value=-365, max_value=-1))
+                   ^^^
+
+test_library_fines.py:48:
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+days = [], negative_day = -1
+
+    @given(st.lists(st.integers(min_value=0, max_value=365)),
+           st.integers(min_value=-365, max_value=-1))
+    def test_total_fine_rejects_negative_days(days, negative_day):
+        days_csv = ",".join(str(d) for d in days + [negative_day])
+>       assert total_fine(days_csv) is None
+E       AssertionError: assert 0 is None
+E        +  where 0 = total_fine('-1')
+E       Failing test case: test_total_fine_rejects_negative_days(
+E           # The test always failed when commented parts were varied together.
+E           days=[],  # or any other generated value
+E           negative_day=-1,  # or any other generated value
+E       )
+
+test_library_fines.py:51: AssertionError
+=============================================== short test summary info ===============================================
+FAILED test_library_fines.py::test_parse_member_id_no_crash - ExceptionGroup: Hypothesis found 3 distinct failures. (3 sub-exceptions)
+FAILED test_library_fines.py::test_total_fine_no_crash - ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+FAILED test_library_fines.py::test_shelf_code_no_crash - ExceptionGroup: Hypothesis found 2 distinct failures. (2 sub-exceptions)
+FAILED test_library_fines.py::test_total_fine_rejects_negative_days - AssertionError: assert 0 is None
+============================================ 4 failed, 3 passed in 10.29s =============================================
+PS D:\SE-Lab\Lab7>
