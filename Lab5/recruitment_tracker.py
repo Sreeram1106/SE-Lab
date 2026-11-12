@@ -42,7 +42,8 @@ def update_status(applicant_id, status):
     """
     try:
         cursor = conn.execute(
-            "UPDATE applicants SET status = ? WHERE id = ?", (status, applicant_id)
+            "UPDATE applicants SET status = ? WHERE id = ?",
+            (status, applicant_id),
         )
         conn.commit()
     except sqlite3.Error as error:
@@ -51,16 +52,21 @@ def update_status(applicant_id, status):
         return False
     return cursor.rowcount == 1
 
+
 def export_report(path):
     """Write every applicant's name, role and status to a CSV file."""
     with open(path, "w", encoding="utf-8", newline="") as report:
         writer = csv.writer(report)
-        writer.writerows(conn.execute("SELECT name, role, status FROM applicants"))
+        writer.writerows(
+            conn.execute("SELECT name, role, status FROM applicants")
+        )
 
 
 def count_by_status(status):
     """Return how many applicants currently have the given status."""
-    return conn.execute("SELECT COUNT(*) FROM applicants WHERE status = ?", (status,)).fetchone()[0]
+    return conn.execute(
+        "SELECT COUNT(*) FROM applicants WHERE status = ?", (status,)
+    ).fetchone()[0]
 
 
 def main():
